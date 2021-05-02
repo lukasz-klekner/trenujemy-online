@@ -3,12 +3,14 @@ import fb from '../assets/images/fbIcon.png';
 import instagram from '../assets/images/instaIcon.png';
 import gym from '../assets/images/gym.jpg'
 
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 import SocialButton from './SocialButton';
 import Form from './Form';
 
 const App = () => (
+  <>
+  <GlobalStyle />
   <Body>
     <Main>
       <img src={logo} alt="Logo"/>
@@ -29,17 +31,23 @@ const App = () => (
       </Wrapper>
     </Main>
   </Body>
+  </>
 )
 
 export default App;
 
 const Body = styled.div`
-  font-family: system-ui;
-  font-size: 10px;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+`
+
+const GlobalStyle = createGlobalStyle`
+${Body} {
+  font-family: system-ui;
+  font-size: 10px;
+  }
 `
 
 const Main =  styled.main`
